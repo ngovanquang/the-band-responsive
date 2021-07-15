@@ -158,7 +158,7 @@ html {
     position: relative;
     margin-top: 48px;
     padding-top: 50%;
-    background: url('/assets/img/slider/chicago.jpg') top center / cover no-repeat;
+    background: url('https://github.com/ngovanquang/the-band-responsive/blob/master/assets/img/slider/la.jpg?raw=true') top center / cover no-repeat;
 }
 
 #slider .text-content {
