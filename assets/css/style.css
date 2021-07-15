@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+input {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
 .float-right {
     float: right;
 }
