@@ -1,3 +1,36 @@
+/* PC */
+@media (min-width: 1024px) {
+
+}
+
+/* Tablet & mobile */
+@media (max-width: 1023px) {
+    .other-btn {
+        padding: 15px 16px;
+    }
+    .contact-form .form-control {
+        padding: 15px;
+    }
+    .contact-info {
+        line-height: 2;
+    }
+    .socials-list {
+        font-size: 48px;
+        
+    }
+    .socials-list a {
+        margin-top: 0 8px;
+    }
+    #footer .copyright a {
+        padding: 12px 0;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    
+}
+
 /* Mobile */
 @media (max-width: 739px) {
 
@@ -58,7 +91,7 @@
         margin-top: 8px;
     }
     .contact-form {
-        margin-top: 16px;
+        margin-top: 32px;
     }
     
 }
