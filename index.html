@@ -107,7 +107,7 @@
                                 <h3 class="place-heading">New York</h3>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="mt-16 other-btn s-full-width">Buy Tickets</a>
+                                <button class="mt-16 other-btn s-full-width js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -117,7 +117,7 @@
                                 <h3 class="place-heading">Paris</h3>
                                 <p class="place-time">Sat 28 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="mt-16 other-btn s-full-width">Buy Tickets</a>
+                                <button class="mt-16 other-btn s-full-width js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -127,7 +127,7 @@
                                 <h3 class="place-heading">San Francisco</h3>
                                 <p class="place-time">Sun 29 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="#" class="mt-16 other-btn s-full-width">Buy Tickets</a>
+                                <button class="mt-16 other-btn s-full-width js-buy-ticket">Buy Tickets</button>
                             </div>
                         </div>
 
@@ -188,6 +188,38 @@
 
     </div>
 
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+            <header class="modal-header">
+                <i class="ti-bag"></i>
+                Tickets
+            </header>
+            <div class="modal-body">
+                <label for="ticket-quantity" class="modal-label">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input type="text" placeholder="How many?" id="ticket-quantity" class="modal-input">
+
+                <label for="ticket-email" class="modal-label">
+                    <i class="ti-user"></i>
+                    Send to
+                </label>
+                <input type="email" placeholder="Enter email..." id="ticket-email" class="modal-input">
+
+                <button id="buy-tickets">
+                    Pay <i class="ti-check"></i>
+                </button>
+            </div>
+            <footer class="modal-footer">
+                <p class="modal-help">Need <a href="">help?</a></p>
+            </footer>
+        </div>
+    </div>
+
     <script>
         var header = document.getElementById('header');
         var mobileMenu = document.getElementById('mobile-menu');
@@ -224,6 +256,36 @@
 
     }
 
+    </script>
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-ticket');
+        const modal = document.querySelector('.js-modal');
+        const modalClose = document.querySelector('.js-modal-close');
+        const modalContainer = document.querySelector('.js-modal-container');
+
+        function showBuyTickets() {
+            modal.classList.add('modal--open');
+        }
+
+        function hideBuyTickets() {
+            modal.classList.add('fade-out');
+            setTimeout(function() {
+                modal.classList.remove('modal--open');
+                modal.classList.remove('fade-out');
+            }, 450);
+            
+        }
+
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTickets);
+        }
+
+        modalClose.addEventListener('click', hideBuyTickets);
+        
+        modal.addEventListener('click', hideBuyTickets);
+        modalContainer.addEventListener('click', function (event) {
+            event.stopPropagation();
+        })
     </script>
 </body>
 
